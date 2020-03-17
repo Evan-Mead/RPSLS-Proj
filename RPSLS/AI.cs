@@ -9,8 +9,12 @@ namespace RPSLS
         public AI(string name, int score)
         {
             this.name = name;
-            this.score = score;
+            score = 0;
+        }
+
+        public void Computing()
+        {
+            Console.WriteLine("{0} computes next move.", name);
         }
     }
-
 }

@@ -6,33 +6,20 @@ namespace RPSLS
 {
     class Game
     {
-        Player playerOne;
-        Player playerTwo;
+        //public Player playerOne;
+        //public Player playerTwo;
 
         //public Game()
         //{
-        //    playerOne = new Human;
-        //    playerTwo = new Player;
+        //    playerOne = new Player();
+        //    playerTwo = new Player();
         //}
 
-        //public void GameMode()
-        //{
-        //    if player chooses option ONE = PVP;
-        //else if player chooses opion TWO = PVE;
-        //else = EVE
-        //}
-
-        public void PickMove()
+        public void BetweenTurns()
         {
-
+            Human PlayerOne = new Human("Player One", 0);
+            AI PlayerTwo = new AI("Computer", 0);
         }
-
-        public void GameWinner()
-        {
-
-        }
-
-        //mem meth
 
         public void RunGame()
         {
@@ -52,6 +39,14 @@ namespace RPSLS
             {
                 Console.WriteLine(instruction);
             }
+
+            Console.ReadLine();
+
+            Console.WriteLine("Please select your opponent.");
+            Console.ReadLine();
+
+            BetweenTurns();
+            Console.ReadLine();
         }
     }
 }

@@ -4,13 +4,17 @@ using System.Text;
 
 namespace RPSLS
 {
-    public class Human : Player\\mac\Home\Desktop\DCC\Week 2\RPSLS\RPSLS\AI.cs
+    public class Human : Player
     {
         public Human(string name, int score)
         {
             this.name = name;
-            this.score = score;
+            score = 0;
+        }
+
+        public void StareDown()
+        {
+            Console.WriteLine("{0} stares at opponent.", name);
         }
     }
-
 }
