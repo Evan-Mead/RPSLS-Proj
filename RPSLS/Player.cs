@@ -4,17 +4,17 @@ using System.Text;
 
 namespace RPSLS
 {
-    public class Player
+    public abstract class Player
     {
         public string name;
+        public string choice;
         public int score;
+        public List<string> gestures;
 
-        public List<Human> playerOne;
-        public List<AI> playerTwo;
-
-    public Player()
+        public Player()
         {
-            //USER INPUT//
+            gestures = new List<string>();
+
             List<string> gestures = new List<string>();
             gestures.Add("Choose a move:");
             gestures.Add("ROCK");
@@ -22,10 +22,13 @@ namespace RPSLS
             gestures.Add("SCISSORS");
             gestures.Add("LIZARD");
             gestures.Add("SPOCK");
+        }
 
-            foreach (string gesture in gestures)
+        public void DisplayGestures()
+        {
+            foreach (int i = 0; i < gestures.Count; i++)
             {
-                Console.WriteLine(gesture);
+                Console.WriteLine(gesture[i]);
             }
         }
     }

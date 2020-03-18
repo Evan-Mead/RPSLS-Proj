@@ -6,20 +6,24 @@ namespace RPSLS
 {
     class Game
     {
-        //public Player playerOne;
-        //public Player playerTwo;
+        Player playerOne;
+        Player playerTwo;
 
-        //public Game()
-        //{
-        //    playerOne = new Player();
-        //    playerTwo = new Player();
-        //}
-
-        public void BetweenTurns()
+        public Game()
         {
-            Human PlayerOne = new Human("Player One", 0);
-            AI PlayerTwo = new AI("Computer", 0);
+            
         }
+
+        //public void ChooseGameMode()
+        //{
+        //    Console.WriteLine("Select Game Mode");
+        //    string userInput = Console.ReadLine();
+        //    playerOne = new Human();
+        //    playerTwo = new AI();
+        //}
+        //if (user picks Human then opponent will be PVP)
+        //else (user picks AI then opponet will be PVE)
+        //*else if (user picks hidden option AI vs AI for NPC battle)*//
 
         public void RunGame()
         {
@@ -42,48 +46,17 @@ namespace RPSLS
                 Console.WriteLine(instruction);
             }
 
-            Console.ReadLine();
+            //Console.ReadLine();
 
-            Console.WriteLine("Select your opponent");
-            //if (user picks Human then opponent will be PVP)
-            //else (user picks AI then opponet will be PVE)
-            //else if (user picks hidden option AI vs AI for NPC battle)
-            Console.ReadLine();
+            //ChooseGameMode();
 
-            Console.WriteLine("Select a gesture for your turn: \n");
-            string move = Console.ReadLine();
+            //playerOne.ChooseGesture();
+            //playerTwo.ChooseGesture();
 
-            BetweenTurns();
-            Console.ReadLine();
+            //Console.WriteLine("Select a gesture for your turn: \n");
+            //string move = Console.ReadLine();
 
-            switch (move)
-            {
-                case "ROCK":
-                    Console.WriteLine("You Selected " + move + " as your turn.");
-                    break;
-                case "PAPER":
-                    Console.WriteLine("You Selected " + move + " as your turn.");
-                    break;
-                case "SCISSORS":
-                    Console.WriteLine("You Selected " + move + " as your turn.");
-                    break;
-                case "LIZARD":
-                    Console.WriteLine("You Selected " + move + " as your turn.");
-                    break;
-                case "SPOCK":
-                    Console.WriteLine("You Selected " + move + " as your turn.");
-                    break;
-                default:
-                    Console.WriteLine("Not a valid gesture. Select again.");
-                    break;
-            }
-
-            if (Console.WriteLine("Not a valid gesture. Select again.")
-            {
-                Console.WriteLine("Select a gesture for your turn: \n");
-            }
-
-                Console.ReadLine();
+            //Console.ReadLine();
         }
     }
 }

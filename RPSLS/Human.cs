@@ -6,15 +6,18 @@ namespace RPSLS
 {
     public class Human : Player
     {
-        public Human(string name, int score)
+
+        public Human(string name, string choice, int score, string gestures)
         {
             this.name = name;
+            this.choice = choice;
             score = 0;
+            List<string>(gestures);
         }
 
-        public void StareDown()
+        public override void ChooseGesture()
         {
-            Console.WriteLine("{0} stares at opponent.", name);
+            //CHOICE OF GESTURE
         }
     }
 }
