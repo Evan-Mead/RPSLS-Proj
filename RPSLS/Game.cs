@@ -6,12 +6,12 @@ namespace RPSLS
 {
     public class Game
     {
-        Player playerOne;
-        Player playerTwo;
+        public Player playerOne;
+        public Player playerTwo;
 
         public Game()
         {
-
+            public List<string> guesturesList;
         }
 
         public string ChooseGameMode(string output)
@@ -25,18 +25,18 @@ namespace RPSLS
         {
             if (playerSelect == "Human")
             {
-                playerOne = new Human();
-                playerTwo = new Human();
+                playerOne = new Human("User 1", 0, );
+                playerTwo = new Human("User 2", 0, );
             }
             else if (playerSelect == "CPU");
             {
-                playerOne = new Human();
-                playerTwo = new AI();
+                playerOne = new Human("User 1", 0, );
+                playerTwo = new AI("Cortana", 0, );
             }
             else
             {
-                playerOne = new AI();
-                playerTwo = new AI();
+                playerOne = new AI("Cortana", 0, );
+                playerTwo = new AI("GLaDOS", 0, );
             }
         }
 
