@@ -4,26 +4,41 @@ using System.Text;
 
 namespace RPSLS
 {
-    class Game
+    public class Game
     {
         Player playerOne;
         Player playerTwo;
 
         public Game()
         {
-            
+
         }
 
-        //public void ChooseGameMode()
-        //{
-        //    Console.WriteLine("Select Game Mode");
-        //    string userInput = Console.ReadLine();
-        //    playerOne = new Human();
-        //    playerTwo = new AI();
-        //}
-        //if (user picks Human then opponent will be PVP)
-        //else (user picks AI then opponet will be PVE)
-        //*else if (user picks hidden option AI vs AI for NPC battle)*//
+        public string ChooseGameMode(string output)
+        {
+            Console.WriteLine(output); 
+            string userChooseGameMode = (Console.ReadLine());
+            return Console.ReadLine();
+        }
+
+        public void SelectPlayers(string playerSelect)
+        {
+            if (playerSelect == "Human")
+            {
+                playerOne = new Human();
+                playerTwo = new Human();
+            }
+            else if (playerSelect == "CPU");
+            {
+                playerOne = new Human();
+                playerTwo = new AI();
+            }
+            else
+            {
+                playerOne = new AI();
+                playerTwo = new AI();
+            }
+        }
 
         public void RunGame()
         {
@@ -46,9 +61,11 @@ namespace RPSLS
                 Console.WriteLine(instruction);
             }
 
-            //Console.ReadLine();
+            Console.ReadLine();
 
-            //ChooseGameMode();
+            Console.WriteLine("SELECT GAME MODE: ");
+
+            string userChooseGameMode = ChooseGameMode("HUMAN - CPU - SPECTATE");
 
             //playerOne.ChooseGesture();
             //playerTwo.ChooseGesture();

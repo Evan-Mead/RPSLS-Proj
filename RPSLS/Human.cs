@@ -7,17 +7,20 @@ namespace RPSLS
     public class Human : Player
     {
 
-        public Human(string name, string choice, int score, string gestures)
+        public Human(string name, string choice, int score, string gesturesList)
         {
             this.name = name;
             this.choice = choice;
             score = 0;
-            List<string>(gestures);
+            this.gesturesList = new List<string>();
         }
 
-        public override void ChooseGesture()
+        public override void ChooseGuestures()
         {
-            //CHOICE OF GESTURE
+            Console.WriteLine("User will choose :");
+            choice = Console.ReadLine();
         }
+
+
     }
 }

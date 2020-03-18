@@ -9,26 +9,25 @@ namespace RPSLS
         public string name;
         public string choice;
         public int score;
-        public List<string> gestures;
+        public List<string> gesturesList;
 
         public Player()
         {
-            gestures = new List<string>();
+            gesturesList = new List<string>();
 
-            List<string> gestures = new List<string>();
-            gestures.Add("Choose a move:");
-            gestures.Add("ROCK");
-            gestures.Add("PAPER");
-            gestures.Add("SCISSORS");
-            gestures.Add("LIZARD");
-            gestures.Add("SPOCK");
+            gesturesList.Add("Choose a move:");
+            gesturesList.Add("ROCK");
+            gesturesList.Add("PAPER");
+            gesturesList.Add("SCISSORS");
+            gesturesList.Add("LIZARD");
+            gesturesList.Add("SPOCK");
         }
 
-        public void DisplayGestures()
+        public void ChooseGestures()
         {
-            foreach (int i = 0; i < gestures.Count; i++)
+            for (int i = 0; i < gesturesList.Count; i++)
             {
-                Console.WriteLine(gesture[i]);
+                Console.WriteLine(gesturesList[i]);
             }
         }
     }

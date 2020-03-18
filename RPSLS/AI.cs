@@ -11,13 +11,14 @@ namespace RPSLS
             this.name = name;
             this.choice = choice;
             score = 0;
-            List<string>(gestures);
+            this.gesturesList = new List<string>();
         }
 
 
-        public override void ChooseGesture()
+        public override void ChooseGestures()
         {
-            //RANDOM GESTURE
+            Console.WriteLine("CPU will choose :");
+            choice = Console.ReadLine();
         }
     }
 }
