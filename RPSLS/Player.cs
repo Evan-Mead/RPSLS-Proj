@@ -14,6 +14,7 @@ namespace RPSLS
 
     public Player()
         {
+            //USER INPUT//
             List<string> gestures = new List<string>();
             gestures.Add("Choose a move:");
             gestures.Add("ROCK");
@@ -26,18 +27,6 @@ namespace RPSLS
             {
                 Console.WriteLine(gesture);
             }
-        }
-
-        public void MoveChoice()
-        {
-            Console.WriteLine("{0} is choosing a move.", name);
-            /* moves go here
-             * ROCK
-             * PAPER
-             * SCISSORS
-             * LIZARD
-             * SPOCK
-             */
         }
     }
 }

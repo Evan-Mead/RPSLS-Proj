@@ -28,11 +28,13 @@ namespace RPSLS
 
             List<string> instructions = new List<string>();
             instructions.Add("Here are the instructions:");
-            instructions.Add("Rock crushes Scissors. Scissors cuts Paper.");
-            instructions.Add("Paper covers Rock. Rock crushes Lizard.");
-            instructions.Add("Lizard poisons Spock. Spock smashes Scissors.");
-            instructions.Add("Scissors decapitates Lizard. Lizard eats Paper.");
-            instructions.Add("Paper disproves Spock. Spock vaporizes Rock.");
+            instructions.Add(" ");
+            instructions.Add("ROCK crushes SCISSORS. SCISSORS cuts PAPER.");
+            instructions.Add("PAPER covers ROCK. ROCK crushes LIZARD.");
+            instructions.Add("LIZARD poisons SPOCK. SPOCK smashes SCISSORS.");
+            instructions.Add("SCISSORS decapitates LIZARD. LIZARD eats PAPER.");
+            instructions.Add("PAPER disproves SPOCK. SPOCK vaporizes ROCK.");
+            instructions.Add(" ");
             instructions.Add("FIRST PLAYER TO WIN THREE OUT OF FIVE MATCHES IN A ROW, WINS!");
 
             foreach (string instruction in instructions)
@@ -42,11 +44,46 @@ namespace RPSLS
 
             Console.ReadLine();
 
-            Console.WriteLine("Please select your opponent.");
+            Console.WriteLine("Select your opponent");
+            //if (user picks Human then opponent will be PVP)
+            //else (user picks AI then opponet will be PVE)
+            //else if (user picks hidden option AI vs AI for NPC battle)
             Console.ReadLine();
+
+            Console.WriteLine("Select a gesture for your turn: \n");
+            string move = Console.ReadLine();
 
             BetweenTurns();
             Console.ReadLine();
+
+            switch (move)
+            {
+                case "ROCK":
+                    Console.WriteLine("You Selected " + move + " as your turn.");
+                    break;
+                case "PAPER":
+                    Console.WriteLine("You Selected " + move + " as your turn.");
+                    break;
+                case "SCISSORS":
+                    Console.WriteLine("You Selected " + move + " as your turn.");
+                    break;
+                case "LIZARD":
+                    Console.WriteLine("You Selected " + move + " as your turn.");
+                    break;
+                case "SPOCK":
+                    Console.WriteLine("You Selected " + move + " as your turn.");
+                    break;
+                default:
+                    Console.WriteLine("Not a valid gesture. Select again.");
+                    break;
+            }
+
+            if (Console.WriteLine("Not a valid gesture. Select again.")
+            {
+                Console.WriteLine("Select a gesture for your turn: \n");
+            }
+
+                Console.ReadLine();
         }
     }
 }
