@@ -11,36 +11,48 @@ namespace RPSLS
 
         public Game()
         {
-            public List<string> guesturesList;
+
         }
 
-        public string ChooseGameMode(string output)
+        public void ChooseGameMode()
         {
-            Console.WriteLine(output); 
-            string userChooseGameMode = (Console.ReadLine());
-            return Console.ReadLine();
+            Console.WriteLine("HUMAN - CPU - SPECTATE");
+            string userInput = Console.ReadLine();
+
+            if(userInput == "Human")
+            {
+                playerOne = new Human("User 1");
+                playerTwo = new Human("User 2");
+            }
+            else if(userInput == "CPU");
+            {
+                playerOne = new Human("User 1");
+                playerTwo = new AI("Cortana");
+            }
+            ////if(userInput == "SPECTATE")
+            ////{
+            ////    playerOne = new AI("Cortana", 0);
+            ////    playerTwo = new AI("GLaDOS", 0);
+            ////}
         }
 
-        public void SelectPlayers(string playerSelect)
-        {
-            if (playerSelect == "Human")
-            {
-                playerOne = new Human("User 1", 0, );
-                playerTwo = new Human("User 2", 0, );
-            }
-            else if (playerSelect == "CPU");
-            {
-                playerOne = new Human("User 1", 0, );
-                playerTwo = new AI("Cortana", 0, );
-            }
-            else
-            {
-                playerOne = new AI("Cortana", 0, );
-                playerTwo = new AI("GLaDOS", 0, );
-            }
-        }
+        //public void ChooseGuestures()
+        
+        //    gesturesList = new List<string>();
+            
+        //    gesturesList.Add("Choose a guesture: ");
+        //    gesturesList.Add("ROCK");
+        //    gesturesList.Add("PAPER");
+        //    gesturesList.Add("SCISSORS");
+        //    gesturesList.Add("LIZARD");
+        //    gesturesList.Add("SPOCK");
 
-        public void RunGame()
+        //    for (int i = 0; i<gesturesList.Count; i++)
+        //    {
+        //        Console.WriteLine(gesturesList[i]);
+        //    }
+
+    public void RunGame()
         {
             Console.WriteLine("ROCK PAPER SCISSORS LIZARD SPOCK");
             Console.ReadLine();
@@ -60,12 +72,14 @@ namespace RPSLS
             {
                 Console.WriteLine(instruction);
             }
+            Console.ReadLine();
+
+            Console.WriteLine("SELECT GAME MODE:");
 
             Console.ReadLine();
 
-            Console.WriteLine("SELECT GAME MODE: ");
+            ChooseGameMode();
 
-            string userChooseGameMode = ChooseGameMode("HUMAN - CPU - SPECTATE");
 
             //playerOne.ChooseGesture();
             //playerTwo.ChooseGesture();
