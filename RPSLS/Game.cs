@@ -42,13 +42,58 @@ namespace RPSLS
             Console.WriteLine("Select a gesture: \n1 = ROCK\n2 = PAPER\n3 = SCISSORS\n4 = LIZARD\n5 = SPOCK");
             string[] gestureChoice = new string[5] { "ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK" };
             Random rnd = new Random();
-            int n = rnd.Next(0, 5);
+            int n = rnd.Next(5);
             Console.WriteLine("Enter your selection:");
-            string userInput = Console.ReadLine();
+            string playerOneInput = Console.ReadLine();
+            string playerTwoInput = Console.ReadLine();
             Console.WriteLine("CPU:" + gestureChoice[n]);
 
-            //MAKE A LOOP FOR TURNS
+            if (playerOneInput == "ROCK" && (playerTwoInput == "SCISSORS" || playerTwoInput == "LIZARD"))
+            {
+                Console.WriteLine("Player 1 wins the round.");
+            }
+            else if (playerOneInput == "ROCK" && (playerTwoInput == "PAPER" || playerTwoInput == "SPOCK"))
+            {
+                Console.WriteLine("Player 2 wins the round.");
+            }
+            else if (playerOneInput == "PAPER" && (playerTwoInput == "ROCK" || playerTwoInput == "SPOCK"))
+            {
+                Console.WriteLine("Player 1 wins the round.");
+            }
+            else if (playerOneInput == "PAPER" && (playerTwoInput == "SCISSORS" || playerTwoInput == "LIZARD"))
+            {
+                Console.WriteLine("Player 2 wins the round.");
+            }
+            else if (playerOneInput == "SCISSORS" && (playerTwoInput == "PAPER" || playerTwoInput == "LIZARD"))
+            {
+                Console.WriteLine("Player 1 wins the round.");
+            }
+            else if (playerOneInput == "SCISSORS" && (playerTwoInput == "ROCK" || playerTwoInput == "SPOCK"))
+            {
+                Console.WriteLine("Player 2 wins the round.");
+            }
+            else if (playerOneInput == "LIZARD" && (playerTwoInput == "ROCK" || playerTwoInput == "SCISSORS"))
+            {
+                Console.WriteLine("Player 1 wins the round.");
+            }
+            else if (playerOneInput == "LIZARD" && (playerTwoInput == "SPOCK" || playerTwoInput == "PAPER"))
+            {
+                Console.WriteLine("Player 2 wins the round.");
+            }
+            else if (playerOneInput == "SPOCK" && (playerTwoInput == "ROCK" || playerTwoInput == "SCISSORS"))
+            {
+                Console.WriteLine("Player 1 wins the round.");
+            }
+            else if (playerOneInput == "SPOCK" && (playerTwoInput == "PAPER" || playerTwoInput == "LIZARD"))
+            {
+                Console.WriteLine("Player 2 wins the round.");
+            }
+            else
+            {
+                Console.WriteLine("Players TIED.");
+            }
         }
+
         public void RunGame()
         {
             Console.WriteLine("ROCK - PAPER - SCISSORS - LIZARD - SPOCK");
@@ -82,11 +127,7 @@ namespace RPSLS
 
             ChooseGuestures();
 
-
-            //Console.WriteLine("Select a gesture for your turn: \n");
-            //string move = Console.ReadLine();
-
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }

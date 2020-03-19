@@ -14,7 +14,12 @@ namespace RPSLS
 
         }
 
-        public void ChooseMove()
+        public void PlayerGesture()
+        {
+
+        } 
+
+        public virtual void DecidingGesture()
         {
             Console.WriteLine("Get ready to choose your next guesture.");
         }

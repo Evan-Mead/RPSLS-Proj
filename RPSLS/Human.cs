@@ -11,7 +11,7 @@ namespace RPSLS
             this.name = name;
         }
 
-        public void DecidingGesture()
+        public override void DecidingGesture()
         {
             Console.WriteLine("User is thinking...");
         }
