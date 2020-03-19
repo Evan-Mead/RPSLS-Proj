@@ -16,7 +16,7 @@ namespace RPSLS
 
         public void ChooseGameMode()
         {
-            Console.WriteLine("HUMAN - CPU - SPECTATE");
+            Console.WriteLine("HUMAN = 1 | CPU = 2 | SPECTATE = 3");
             string userInput = Console.ReadLine();
 
             if(userInput == "Human")
@@ -39,26 +39,15 @@ namespace RPSLS
 
         public void ChooseGuestures()
         {
-            //string[] gestureRock = new string[1] { "ROCK" };
-            //string[] gesturePaper = new string[1] { "PAPER" };
-            //string[] gestureScissors = new string[1] { "SCISSORS" };
-            //string[] gestureLizard = new string[1] { "LIZARD" };
-            //string[] gestureSpock = new string[1] { "SPOCK" };
+            Console.WriteLine("Select a gesture: \n1 = ROCK\n2 = PAPER\n3 = SCISSORS\n4 = LIZARD\n5 = SPOCK");
+            string[] gestureChoice = new string[5] { "ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK" };
+            Random rnd = new Random();
+            int n = rnd.Next(0, 5);
+            Console.WriteLine("Enter your selection:");
+            string userInput = Console.ReadLine();
+            Console.WriteLine("CPU:" + gestureChoice[n]);
 
-
-            //gesturesList = new List<string>();
-
-            //gesturesList.Add("Choose a guesture: ");
-            //gesturesList.Add("ROCK");
-            //gesturesList.Add("PAPER");
-            //gesturesList.Add("SCISSORS");
-            //gesturesList.Add("LIZARD");
-            //gesturesList.Add("SPOCK");
-
-            //for (int i = 0; i < gesturesList.Count; i++)
-            //{
-            //    Console.WriteLine(gesturesList[i]);
-            //}
+            //MAKE A LOOP FOR TURNS
         }
         public void RunGame()
         {
@@ -79,7 +68,7 @@ namespace RPSLS
             gameRules.Add("SPOCK vaporizes ROCK.");
             gameRules.Add("And, as it always has, ROCK smashes SCISSORS.");
             gameRules.Add(" ");
-            gameRules.Add("FIRST PLAYER TO WIN THREE OUT OF FIVE MATCHES WINS!");
+            gameRules.Add("FIRST PLAYER TO WIN THREE ROUNDS WINS!");
 
             foreach (string rules in gameRules)
             {
@@ -87,15 +76,12 @@ namespace RPSLS
             }
             Console.ReadLine();
 
-            Console.WriteLine("INPUT YOUR SELECTION, AND PRESS ENTER TO SELECT GAME MODE:");
+            Console.WriteLine("INPUT YOUR SELECTION, AND PRESS ENTER TO SELECT YOUR OPPONENT:");
 
             ChooseGameMode();
 
-            //ChooseGuestures();
+            ChooseGuestures();
 
-
-            //playerOne.ChooseGesture();
-            //playerTwo.ChooseGesture();
 
             //Console.WriteLine("Select a gesture for your turn: \n");
             //string move = Console.ReadLine();
