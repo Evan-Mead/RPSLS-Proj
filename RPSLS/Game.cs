@@ -34,27 +34,35 @@ namespace RPSLS
                 playerOne = new AI("Cortana");
                 playerTwo = new AI("GLaDOS");
             }
+            //HOW DO I CREATE AN OPTION THAT PROMPTS USER TO RE-TYPE IF WRONG??
         }
 
-        //public void ChooseGuestures()
+        public void ChooseGuestures()
+        {
+            //string[] gestureRock = new string[1] { "ROCK" };
+            //string[] gesturePaper = new string[1] { "PAPER" };
+            //string[] gestureScissors = new string[1] { "SCISSORS" };
+            //string[] gestureLizard = new string[1] { "LIZARD" };
+            //string[] gestureSpock = new string[1] { "SPOCK" };
 
-        //    gesturesList = new List<string>();
 
-        //    gesturesList.Add("Choose a guesture: ");
-        //    gesturesList.Add("ROCK");
-        //    gesturesList.Add("PAPER");
-        //    gesturesList.Add("SCISSORS");
-        //    gesturesList.Add("LIZARD");
-        //    gesturesList.Add("SPOCK");
+            //gesturesList = new List<string>();
 
-        //    for (int i = 0; i<gesturesList.Count; i++)
-        //    {
-        //        Console.WriteLine(gesturesList[i]);
-        //    }
+            //gesturesList.Add("Choose a guesture: ");
+            //gesturesList.Add("ROCK");
+            //gesturesList.Add("PAPER");
+            //gesturesList.Add("SCISSORS");
+            //gesturesList.Add("LIZARD");
+            //gesturesList.Add("SPOCK");
 
+            //for (int i = 0; i < gesturesList.Count; i++)
+            //{
+            //    Console.WriteLine(gesturesList[i]);
+            //}
+        }
         public void RunGame()
         {
-            Console.WriteLine("ROCK PAPER SCISSORS LIZARD SPOCK");
+            Console.WriteLine("ROCK - PAPER - SCISSORS - LIZARD - SPOCK");
             Console.ReadLine();
 
             List<string> gameRules = new List<string>();
@@ -79,11 +87,11 @@ namespace RPSLS
             }
             Console.ReadLine();
 
-            Console.WriteLine("SELECT GAME MODE:");
-
-            Console.ReadLine();
+            Console.WriteLine("INPUT YOUR SELECTION, AND PRESS ENTER TO SELECT GAME MODE:");
 
             ChooseGameMode();
+
+            //ChooseGuestures();
 
 
             //playerOne.ChooseGesture();
