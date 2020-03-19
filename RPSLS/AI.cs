@@ -16,14 +16,10 @@ namespace RPSLS
             Console.WriteLine("CPU is running schematics...");
             Console.WriteLine("ROCK, PAPER, SCISSORS, LIZARD, SPOCK...SHOOT!:");
 
-            Random rnd = new Random();
-            int n = rnd.Next(4);
+            Console.WriteLine("CPU:" + selectedGesture);
 
-            //playerTwoInput = Console.ReadLine();
 
-            //Console.WriteLine("CPU:" + gestureChoice[n]);
-
-            selectedGesture = Console.ReadLine();
+            //playerTwoInput.selectedGesture = Console.ReadLine();
         }
     }
 }

@@ -42,7 +42,12 @@ namespace RPSLS
 
         public void ChooseGuestures()
         {
+            //WHILE?? while(playerOne score < 3 || playerTwo score < 3)
             Console.WriteLine("Select a gesture: \n0 = ROCK\n1 = PAPER\n2 = SCISSORS\n3 = LIZARD\n4 = SPOCK");
+            string userInput = Console.ReadLine();
+            userInput = userInput.ToLower();
+            Random pick = new Random();
+            int n = pick.Next(0, 4);
 
             playerOne.DecidingGesture();
             playerTwo.DecidingGesture();
@@ -92,6 +97,7 @@ namespace RPSLS
                 Console.WriteLine("Players TIED.");
             }
         }
+
 
         public void RunGame()
         {
