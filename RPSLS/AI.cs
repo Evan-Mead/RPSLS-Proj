@@ -16,8 +16,8 @@ namespace RPSLS
             Console.WriteLine("CPU is running schematics...");
             Console.WriteLine("ROCK, PAPER, SCISSORS, LIZARD, SPOCK...SHOOT!:");
 
-            //Random rnd = new Random();
-            //int n = rnd.Next(4);
+            Random rnd = new Random();
+            int n = rnd.Next(4);
 
             //playerTwoInput = Console.ReadLine();
 

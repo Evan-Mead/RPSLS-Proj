@@ -19,18 +19,19 @@ namespace RPSLS
         {
             Console.WriteLine("HUMAN = 1 | CPU = 2 | SPECTATE = 3");
             string userInput = Console.ReadLine();
+            userInput = userInput.ToLower();
 
-            if(userInput == "Human")
+            if(userInput == "HUMAN" || userInput == "1")
             {
                 playerOne = new Human("User 1");
                 playerTwo = new Human("User 2");
             }
-            else if(userInput == "CPU")
+            else if(userInput == "CPU" || userInput == "2")
             {
                 playerOne = new Human("User 1");
                 playerTwo = new AI("Cortana");
             }
-            if (userInput == "SPECTATE")
+            if (userInput == "SPECTATE" || userInput == "3")
             {
                 playerOne = new AI("Cortana");
                 playerTwo = new AI("GLaDOS");
