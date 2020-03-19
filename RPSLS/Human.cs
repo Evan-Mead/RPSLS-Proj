@@ -14,8 +14,16 @@ namespace RPSLS
         public override void DecidingGesture()
         {
             Console.WriteLine("{0} is thinking...", name);
+
             Console.WriteLine("ROCK, PAPER, SCISSORS, LIZARD, SPOCK...SHOOT!:");
-            selectedGesture = Console.ReadLine();   //UNSURE OF HOW/WHERE THIS GOES
+
+            Console.WriteLine("Select a gesture: \n1 = ROCK | \n2 = PAPER | \n3 = SCISSORS | \n4 = LIZARD |\n5 = SPOCK");
+            string userInput = Console.ReadLine();
+            userInput = userInput.ToLower();
+
+            //gestureChoice = //?? for why again?
+
+            //selectedGesture = List;   //HOW DO I CALL THE LIST??
         }
     }
 }

@@ -35,18 +35,20 @@ namespace RPSLS
                 playerOne = new Human("User 1");
                 playerTwo = new AI("Cortana");
             }
-            if (userInput == "SPECTATE" || userInput == "3")
+            else if (userInput == "SPECTATE" || userInput == "3")
             {
                 playerOne = new AI("Cortana");
                 playerTwo = new AI("GLaDOS");
             }
-            /*HOW DO I CREATE AN OPTION THAT PROMPTS USER TO RE-TYPE IF WRONG??
-             * PROBABLY A BOOL? LOOK INTO IT AFTER MVP*/
+            else
+            {
+                ChooseGameMode();
+            }
         }
 
         public void ChooseGuestures()
         {
-            playerOne.DecidingGesture();    //GESTURE CHOICE NULL
+            playerOne.DecidingGesture();    //GESTURE CHOICE NULL potential string
             playerTwo.DecidingGesture();    //GESTURE CHOICE NULL
 
             int playerScore = 0;
@@ -103,11 +105,11 @@ namespace RPSLS
             }
             else
             {
-                    Console.WriteLine("Players TIED.");
+                    Console.WriteLine("Players TIED."); //STUCK IN A NEVERENDING LOOP OF "TIED"
             }
             {
                 playerScore += 3;
-                Console.WriteLine(playerScore); //STUCk IN A NEVERENDING LOOP OF "TIED"
+                Console.WriteLine(playerScore); 
             }
         }
 
