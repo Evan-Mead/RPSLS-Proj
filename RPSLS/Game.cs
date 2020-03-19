@@ -8,11 +8,15 @@ namespace RPSLS
     {
         public Player playerOne;
         public Player playerTwo;
+        public int minPlayerScore = 0;
+        public int maxPlayerScore = 3;
+        int playerOneScore;
+        int playerTwoScore;
 
         public Game()
         {
-            playerOne = new Player();
-            playerTwo = new Player();
+            playerOneScore = 0;
+            playerTwoScore = 0;
         }
 
         public void ChooseGameMode()
@@ -42,59 +46,68 @@ namespace RPSLS
 
         public void ChooseGuestures()
         {
-            //WHILE?? while(playerOne score < 3 || playerTwo score < 3)
-            Console.WriteLine("Select a gesture: \n0 = ROCK\n1 = PAPER\n2 = SCISSORS\n3 = LIZARD\n4 = SPOCK");
-            string userInput = Console.ReadLine();
-            userInput = userInput.ToLower();
-            Random pick = new Random();
-            int n = pick.Next(0, 4);
+            playerOne.DecidingGesture();    //GESTURE CHOICE NULL
+            playerTwo.DecidingGesture();    //GESTURE CHOICE NULL
 
-            playerOne.DecidingGesture();
-            playerTwo.DecidingGesture();
-
+            int playerScore = 0;
+            while(playerOneScore < 3 && playerTwoScore < 3)
             if (playerOne.selectedGesture == "ROCK" && (playerTwo.selectedGesture == "SCISSORS" || playerTwo.selectedGesture == "LIZARD"))
             {
                 Console.WriteLine("Player 1 wins the round.");
+                    playerScore += 1;
             }
             else if (playerOne.selectedGesture == "ROCK" && (playerTwo.selectedGesture == "PAPER" || playerTwo.selectedGesture == "SPOCK"))
             {
                 Console.WriteLine("Player 2 wins the round.");
+                    playerScore += 1;
             }
             else if (playerOne.selectedGesture == "PAPER" && (playerTwo.selectedGesture == "ROCK" || playerTwo.selectedGesture == "SPOCK"))
             {
                 Console.WriteLine("Player 1 wins the round.");
+                    playerScore += 1;
             }
             else if (playerOne.selectedGesture == "PAPER" && (playerTwo.selectedGesture == "SCISSORS" || playerTwo.selectedGesture == "LIZARD"))
             {
                 Console.WriteLine("Player 2 wins the round.");
+                    playerScore += 1;
             }
             else if (playerOne.selectedGesture == "SCISSORS" && (playerTwo.selectedGesture == "PAPER" || playerTwo.selectedGesture == "LIZARD"))
             {
                 Console.WriteLine("Player 1 wins the round.");
+                    playerScore += 1;
             }
             else if (playerOne.selectedGesture == "SCISSORS" && (playerTwo.selectedGesture == "ROCK" || playerTwo.selectedGesture == "SPOCK"))
             {
                 Console.WriteLine("Player 2 wins the round.");
+                    playerScore += 1;
             }
             else if (playerOne.selectedGesture == "LIZARD" && (playerTwo.selectedGesture == "ROCK" || playerTwo.selectedGesture == "SCISSORS"))
             {
                 Console.WriteLine("Player 1 wins the round.");
+                    playerScore += 1;
             }
             else if (playerOne.selectedGesture == "LIZARD" && (playerTwo.selectedGesture == "SPOCK" || playerTwo.selectedGesture == "PAPER"))
             {
                 Console.WriteLine("Player 2 wins the round.");
+                    playerScore += 1; 
             }
             else if (playerOne.selectedGesture == "SPOCK" && (playerTwo.selectedGesture == "ROCK" || playerTwo.selectedGesture == "SCISSORS"))
             {
                 Console.WriteLine("Player 1 wins the round.");
+                    playerScore += 1;
             }
             else if (playerOne.selectedGesture == "SPOCK" && (playerTwo.selectedGesture == "PAPER" || playerTwo.selectedGesture == "LIZARD"))
             {
                 Console.WriteLine("Player 2 wins the round.");
+                    playerScore += 1;
             }
             else
             {
-                Console.WriteLine("Players TIED.");
+                    Console.WriteLine("Players TIED.");
+            }
+            {
+                playerScore += 3;
+                Console.WriteLine(playerScore); //STUCk IN A NEVERENDING LOOP OF "TIED"
             }
         }
 
@@ -131,8 +144,6 @@ namespace RPSLS
             ChooseGameMode();
 
             ChooseGuestures();
-
-            Console.ReadLine();
         }
     }
 }

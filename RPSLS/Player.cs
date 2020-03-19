@@ -4,23 +4,25 @@ using System.Text;
 
 namespace RPSLS
 {
-    public class Player
+    public abstract class Player
     {
         public string name;
         public int score;
-        public string selectedGesture;
+        public string selectedGesture = Console.ReadLine(); //UNSURE OF HOW/WHERE THIS GOES 
         public List<string> gestureChoice;
 
         public Player()
         {
-       
+            List <string> gestureChoice = new List<string>();
+            Console.WriteLine("Select a gesture: 0 = ROCK | 1 = PAPER | 2 = SCISSORS | 3 = LIZARD | 4 = SPOCK");
+            string userInput = Console.ReadLine();
+            userInput = userInput.ToLower();
+
+            foreach (string gesture in gestureChoice)
+            {
+                Console.WriteLine(gesture);
+            }
         }
-
-
-
-    public virtual void DecidingGesture()
-        {
-            Console.WriteLine("Get ready to choose your next guesture.");
-        }
+        public abstract void DecidingGesture();
     }
 }

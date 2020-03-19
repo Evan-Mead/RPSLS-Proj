@@ -15,8 +15,7 @@ namespace RPSLS
         {
             Console.WriteLine("{0} is thinking...", name);
             Console.WriteLine("ROCK, PAPER, SCISSORS, LIZARD, SPOCK...SHOOT!:");
-
-            //playerOneInput.selectedGesture = Console.ReadLine();
+            selectedGesture = Console.ReadLine();   //UNSURE OF HOW/WHERE THIS GOES
         }
     }
 }
