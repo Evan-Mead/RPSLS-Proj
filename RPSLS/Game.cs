@@ -24,22 +24,22 @@ namespace RPSLS
                 playerOne = new Human("User 1");
                 playerTwo = new Human("User 2");
             }
-            else if(userInput == "CPU");
+            else if(userInput == "CPU")
             {
                 playerOne = new Human("User 1");
                 playerTwo = new AI("Cortana");
             }
-            ////if(userInput == "SPECTATE")
-            ////{
-            ////    playerOne = new AI("Cortana", 0);
-            ////    playerTwo = new AI("GLaDOS", 0);
-            ////}
+            if (userInput == "SPECTATE")
+            {
+                playerOne = new AI("Cortana");
+                playerTwo = new AI("GLaDOS");
+            }
         }
 
         //public void ChooseGuestures()
-        
+
         //    gesturesList = new List<string>();
-            
+
         //    gesturesList.Add("Choose a guesture: ");
         //    gesturesList.Add("ROCK");
         //    gesturesList.Add("PAPER");
@@ -52,25 +52,30 @@ namespace RPSLS
         //        Console.WriteLine(gesturesList[i]);
         //    }
 
-    public void RunGame()
+        public void RunGame()
         {
             Console.WriteLine("ROCK PAPER SCISSORS LIZARD SPOCK");
             Console.ReadLine();
 
-            List<string> instructions = new List<string>();
-            instructions.Add("Here are the instructions:");
-            instructions.Add(" ");
-            instructions.Add("ROCK crushes SCISSORS. SCISSORS cuts PAPER.");
-            instructions.Add("PAPER covers ROCK. ROCK crushes LIZARD.");
-            instructions.Add("LIZARD poisons SPOCK. SPOCK smashes SCISSORS.");
-            instructions.Add("SCISSORS decapitates LIZARD. LIZARD eats PAPER.");
-            instructions.Add("PAPER disproves SPOCK. SPOCK vaporizes ROCK.");
-            instructions.Add(" ");
-            instructions.Add("FIRST PLAYER TO WIN THREE OUT OF FIVE MATCHES IN A ROW, WINS!");
+            List<string> gameRules = new List<string>();
+            gameRules.Add("Here are the game rules:");
+            gameRules.Add(" ");
+            gameRules.Add("SCISSORS cuts PAPER");
+            gameRules.Add("PAPER covers ROCK.");
+            gameRules.Add("ROCK smashes LIZARD.");
+            gameRules.Add("LIZARD poisons SPOCK.");
+            gameRules.Add("SPOCK smashes SCISSORS.");
+            gameRules.Add("SCISSORS decapitates LIZARD.");
+            gameRules.Add("LIZARD eats PAPER.");
+            gameRules.Add("PAPER disproves SPOCK.");
+            gameRules.Add("SPOCK vaporizes ROCK.");
+            gameRules.Add("And, as it always has, ROCK smashes SCISSORS.");
+            gameRules.Add(" ");
+            gameRules.Add("FIRST PLAYER TO WIN THREE OUT OF FIVE MATCHES WINS!");
 
-            foreach (string instruction in instructions)
+            foreach (string rules in gameRules)
             {
-                Console.WriteLine(instruction);
+                Console.WriteLine(rules);
             }
             Console.ReadLine();
 
