@@ -11,7 +11,8 @@ namespace RPSLS
 
         public Game()
         {
-
+            playerOne = new Player();
+            playerTwo = new Player();
         }
 
         public void ChooseGameMode()
@@ -34,57 +35,54 @@ namespace RPSLS
                 playerOne = new AI("Cortana");
                 playerTwo = new AI("GLaDOS");
             }
-            //HOW DO I CREATE AN OPTION THAT PROMPTS USER TO RE-TYPE IF WRONG??
+            /*HOW DO I CREATE AN OPTION THAT PROMPTS USER TO RE-TYPE IF WRONG??
+             * PROBABLY A BOOL? LOOK INTO IT AFTER MVP*/
         }
 
         public void ChooseGuestures()
         {
-            Console.WriteLine("Select a gesture: \n1 = ROCK\n2 = PAPER\n3 = SCISSORS\n4 = LIZARD\n5 = SPOCK");
-            string[] gestureChoice = new string[5] { "ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK" };
-            Random rnd = new Random();
-            int n = rnd.Next(5);
-            Console.WriteLine("Enter your selection:");
-            string playerOneInput = Console.ReadLine();
-            string playerTwoInput = Console.ReadLine();
-            Console.WriteLine("CPU:" + gestureChoice[n]);
+            Console.WriteLine("Select a gesture: \n0 = ROCK\n1 = PAPER\n2 = SCISSORS\n3 = LIZARD\n4 = SPOCK");
 
-            if (playerOneInput == "ROCK" && (playerTwoInput == "SCISSORS" || playerTwoInput == "LIZARD"))
+            playerOne.DecidingGesture();
+            playerTwo.DecidingGesture();
+
+            if (playerOne.selectedGesture == "ROCK" && (playerTwo.selectedGesture == "SCISSORS" || playerTwo.selectedGesture == "LIZARD"))
             {
                 Console.WriteLine("Player 1 wins the round.");
             }
-            else if (playerOneInput == "ROCK" && (playerTwoInput == "PAPER" || playerTwoInput == "SPOCK"))
+            else if (playerOne.selectedGesture == "ROCK" && (playerTwo.selectedGesture == "PAPER" || playerTwo.selectedGesture == "SPOCK"))
             {
                 Console.WriteLine("Player 2 wins the round.");
             }
-            else if (playerOneInput == "PAPER" && (playerTwoInput == "ROCK" || playerTwoInput == "SPOCK"))
+            else if (playerOne.selectedGesture == "PAPER" && (playerTwo.selectedGesture == "ROCK" || playerTwo.selectedGesture == "SPOCK"))
             {
                 Console.WriteLine("Player 1 wins the round.");
             }
-            else if (playerOneInput == "PAPER" && (playerTwoInput == "SCISSORS" || playerTwoInput == "LIZARD"))
+            else if (playerOne.selectedGesture == "PAPER" && (playerTwo.selectedGesture == "SCISSORS" || playerTwo.selectedGesture == "LIZARD"))
             {
                 Console.WriteLine("Player 2 wins the round.");
             }
-            else if (playerOneInput == "SCISSORS" && (playerTwoInput == "PAPER" || playerTwoInput == "LIZARD"))
+            else if (playerOne.selectedGesture == "SCISSORS" && (playerTwo.selectedGesture == "PAPER" || playerTwo.selectedGesture == "LIZARD"))
             {
                 Console.WriteLine("Player 1 wins the round.");
             }
-            else if (playerOneInput == "SCISSORS" && (playerTwoInput == "ROCK" || playerTwoInput == "SPOCK"))
+            else if (playerOne.selectedGesture == "SCISSORS" && (playerTwo.selectedGesture == "ROCK" || playerTwo.selectedGesture == "SPOCK"))
             {
                 Console.WriteLine("Player 2 wins the round.");
             }
-            else if (playerOneInput == "LIZARD" && (playerTwoInput == "ROCK" || playerTwoInput == "SCISSORS"))
+            else if (playerOne.selectedGesture == "LIZARD" && (playerTwo.selectedGesture == "ROCK" || playerTwo.selectedGesture == "SCISSORS"))
             {
                 Console.WriteLine("Player 1 wins the round.");
             }
-            else if (playerOneInput == "LIZARD" && (playerTwoInput == "SPOCK" || playerTwoInput == "PAPER"))
+            else if (playerOne.selectedGesture == "LIZARD" && (playerTwo.selectedGesture == "SPOCK" || playerTwo.selectedGesture == "PAPER"))
             {
                 Console.WriteLine("Player 2 wins the round.");
             }
-            else if (playerOneInput == "SPOCK" && (playerTwoInput == "ROCK" || playerTwoInput == "SCISSORS"))
+            else if (playerOne.selectedGesture == "SPOCK" && (playerTwo.selectedGesture == "ROCK" || playerTwo.selectedGesture == "SCISSORS"))
             {
                 Console.WriteLine("Player 1 wins the round.");
             }
-            else if (playerOneInput == "SPOCK" && (playerTwoInput == "PAPER" || playerTwoInput == "LIZARD"))
+            else if (playerOne.selectedGesture == "SPOCK" && (playerTwo.selectedGesture == "PAPER" || playerTwo.selectedGesture == "LIZARD"))
             {
                 Console.WriteLine("Player 2 wins the round.");
             }

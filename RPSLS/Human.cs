@@ -13,7 +13,11 @@ namespace RPSLS
 
         public override void DecidingGesture()
         {
-            Console.WriteLine("User is thinking...");
+            Console.WriteLine("{0} is thinking...", name);
+            Console.WriteLine("ROCK, PAPER, SCISSORS, LIZARD, SPOCK...SHOOT!:");
+
+            //playerOneInput = Console.ReadLine();
+            selectedGesture = Console.ReadLine();
         }
     }
 }
