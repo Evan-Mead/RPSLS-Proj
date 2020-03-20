@@ -17,11 +17,15 @@ namespace RPSLS
 
             Console.WriteLine("ROCK, PAPER, SCISSORS, LIZARD, SPOCK...SHOOT!:");
 
-            Console.WriteLine("Select a gesture: \n1 = ROCK | \n2 = PAPER | \n3 = SCISSORS | \n4 = LIZARD |\n5 = SPOCK");
-            string userInput = Console.ReadLine();
-            userInput = userInput.ToLower();
-
-            //gestureChoice = //?? for why again?
+            
+            List<string> playerChoice = new List<string>();
+            playerChoice.Add("ROCK"); 
+            playerChoice.Add("PAPER"); 
+            playerChoice.Add("SCISSORS"); 
+            playerChoice.Add("LIZARD"); 
+            playerChoice.Add("SPOCK");
+            Console.WriteLine(name + " picked " + " ");
+            Console.ReadLine();
 
             //selectedGesture = List;   //HOW DO I CALL THE LIST??
         }

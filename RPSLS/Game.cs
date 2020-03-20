@@ -48,8 +48,8 @@ namespace RPSLS
 
         public void ChooseGuestures()
         {
-            playerOne.DecidingGesture();    //GESTURE CHOICE NULL potential string
-            playerTwo.DecidingGesture();    //GESTURE CHOICE NULL
+            playerOne.DecidingGesture(); 
+            playerTwo.DecidingGesture();
 
             int playerScore = 0;
             while(playerOneScore < 3 && playerTwoScore < 3)
@@ -105,7 +105,7 @@ namespace RPSLS
             }
             else
             {
-                    Console.WriteLine("Players TIED."); //STUCK IN A NEVERENDING LOOP OF "TIED"
+                    ChooseGuestures();Console.WriteLine("Players TIED."); //STUCK IN A NEVERENDING LOOP...I DONT THINK SCORE IS BEING CAPTURED//
             }
             {
                 playerScore += 3;
@@ -113,6 +113,10 @@ namespace RPSLS
             }
         }
 
+        public void GameWinner()
+        {
+
+        }
 
         public void RunGame()
         {
@@ -146,6 +150,8 @@ namespace RPSLS
             ChooseGameMode();
 
             ChooseGuestures();
+
+            GameWinner();
         }
     }
 }

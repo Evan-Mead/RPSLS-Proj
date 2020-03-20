@@ -8,7 +8,7 @@ namespace RPSLS
     {
         public string name;
         public int score;
-        public string selectedGesture; //???
+        public string selectedGesture;
         public List<string> gestureChoice;
 
         public Player()
@@ -20,6 +20,7 @@ namespace RPSLS
             gestureChoice.Add("LIZARD");
             gestureChoice.Add("SPOCK");
         }
-        public abstract void DecidingGesture(); //string?
+
+        public abstract void DecidingGesture();
     }
 }
