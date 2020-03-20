@@ -113,11 +113,6 @@ namespace RPSLS
             }
         }
 
-        public void GameWinner()
-        {
-
-        }
-
         public void RunGame()
         {
             Console.WriteLine("ROCK - PAPER - SCISSORS - LIZARD - SPOCK");
@@ -150,8 +145,6 @@ namespace RPSLS
             ChooseGameMode();
 
             ChooseGuestures();
-
-            GameWinner();
         }
     }
 }

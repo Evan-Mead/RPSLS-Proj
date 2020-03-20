@@ -21,10 +21,9 @@ namespace RPSLS
             {
                 var list = new List<string> { "ROCK", "PAPER", "SCISSORS", "LIZARD", "SPOCK" };
                 int index = random.Next(list.Count);
+                Console.ReadLine();
                 Console.WriteLine(name + " picked " + list[index]);
             }
-            
-            //selectedGesture = Console.ReadLine();
         }
     }
 }

@@ -26,8 +26,6 @@ namespace RPSLS
             playerChoice.Add("SPOCK");
             Console.WriteLine(name + " picked " + " ");
             Console.ReadLine();
-
-            //selectedGesture = List;   //HOW DO I CALL THE LIST??
         }
     }
 }
